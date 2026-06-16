@@ -1,0 +1,234 @@
+/* Reset Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Matte Black Background - Easy on eyes */
+body {
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Color Variables */
+:root {
+    --deep-blue: #2563eb;
+    --emerald-green: #10b981;
+    --crimson-red: #ef4444;
+    --dark-gray: #111111;
+    --light-gray: #a1a1aa;
+}
+
+.text-red { color: var(--crimson-red); }
+.text-green { color: var(--emerald-green); }
+.text-blue { color: var(--deep-blue); }
+
+/* Sticky Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    border-bottom: 1px solid #222;
+    background: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--light-gray);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+}
+
+/* Active Page Underline Indicator */
+.nav-links a.active {
+    border-bottom: 2px solid var(--deep-blue);
+    padding-bottom: 4px;
+}
+
+/* Clean Hero Section */
+.hero {
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--light-gray);
+    max-width: 550px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+/* Solid Interactive Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-green { background: var(--emerald-green); color: #ffffff; }
+.btn-green:hover { background: #059669; }
+
+.btn-red { background: var(--crimson-red); color: #ffffff; }
+.btn-red:hover { background: #dc2626; }
+
+.btn:active { transform: scale(0.98); }
+
+/* Core Layout Structure */
+.sections {
+    padding: 5rem 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Sleek Cards */
+.card {
+    background: var(--dark-gray);
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid #222;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-blue:hover { border-color: var(--deep-blue); }
+.card-green:hover { border-color: var(--emerald-green); }
+
+.card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; font-weight: 600; }
+.card p { color: var(--light-gray); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5; }
+.link-btn { text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+/* Skills Badges with Borders */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.badge {
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: var(--dark-gray);
+}
+
+.b-html { border: 1px solid var(--crimson-red); color: var(--crimson-red); }
+.b-css { border: 1px solid var(--deep-blue); color: var(--deep-blue); }
+.b-js { border: 1px solid var(--emerald-green); color: var(--emerald-green); }
+.b-res { border: 1px solid #333; color: var(--light-gray); }
+
+/* Minimalist Form Components */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--dark-gray);
+    border: 1px solid #222;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-container input:focus, .form-container textarea:focus {
+    outline: none;
+    border-color: #444;
+}
+
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    border-top: 1px solid #111;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+/* Flawless Mobile Responsiveness Fix */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 1.25rem 5%;
+    }
+    .nav-links {
+        gap: 1.5rem;
+    }
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+    .sections {
+        padding: 3.5rem 5%;
+    }
+}
